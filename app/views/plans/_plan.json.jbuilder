@@ -9,3 +9,7 @@ json.plan do
         json.term planCourse.term
     end
 end
+
+json.catalog do
+    json.id @catalog.id
+end
