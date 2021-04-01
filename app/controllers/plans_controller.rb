@@ -9,7 +9,7 @@ class PlansController < ApplicationController
 
   # GET /plans/1 or /plans/1.json
   def show
-    # @catalog = Catalog.where(year: plan.year)
+    @catalog = Catalog.where(year: plan.year)
   end
 
   # GET /plans/new

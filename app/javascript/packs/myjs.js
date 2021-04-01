@@ -1,11 +1,16 @@
 $(function(){
     // $('#calendarField').datepicker({ dateFormat: 'yy-mm-dd' });
+    // $.getJSON("http://localhost:3000/plans/1.json", function(data) {
+    //     var planJSON = data.plan;
+    //     $('#testDiv').html(planJSON.id);
+    // });
+    load();
     // $('#testDiv').html("hi mom");
     // $('#example').DataTable();
     function load() {
         $.getJSON("http://localhost:3000/plans/1.json", function(data) {
             var planJSON = data.plan;
-            $('#testDiv').html(planJSON);
+            $('#testDiv').html(planJSON.id);
         });
         // $.getJSON("getDatabase.php", function(data) {
         //     var catalogJSON = data.catalog;
