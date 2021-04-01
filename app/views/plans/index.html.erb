@@ -37,3 +37,71 @@
 
 <div id="testDiv"></div>
 <input type='text' id='calendarField' />
+<script>
+load();
+</script>
+		<h1 id="header">
+			<span id="headerTitle">Awesome Planning Environment</span>
+			<span id="headerInfo">Awesome Planning Environment</span>
+		</h1>
+		<div id="main">
+			<div id= "Left">
+				<div id="UL">
+					<div id="accordion">
+						<h3>Core</h3>
+						<div>
+							<span id="coreTab"></span>
+						</div>
+						<h3>Electives</h3>
+						<div>
+						 	<span id="electivesTab"></span>				
+						</div>
+						<h3>Cognates</h3>
+						<div>
+							<span id="cognatesTab"></span>
+						</div>
+				  </div>
+				</div>
+				<div id="LL">
+					<select id="plans" onchange="ChoosePlans()"></select>
+					<div class="navBut" onclick= "location.href='../../cs3220.html';">Back to Projects<br> </div>
+					<div class="navBut" onclick= "location.href='https://csweb.cedarville.edu/index.php';">Back to Judah</a></div>
+					<div class="navBut" onclick= "location.href='logout.php';">Logout</a></div> <br>
+				</div>
+			</div>
+			<div id= "Right">
+				<div id="UR">
+
+				</div> 
+				<div id="LR">
+					<div id="CourseFinder"> 
+						<div id="FinderHeader">Course Finder</div>
+						<table id="catalogTable" class="display dataTable" width="100%" role="grid">
+							<thead>
+								<tr role="row">
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">Name</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">Title</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1" >Credits</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1" >Description</th>
+								</tr>
+							</thead>
+							<tbody id=tableBody>
+								<tr role="row" id="nameColumn">
+								<td>oops</td>
+								</tr>
+								<tr role="row" id="titleColumn">
+								<td>oops</td>
+								</tr>
+							<tr role="row" id="creditsColumn">
+								<td>oops</td>
+							</tr>
+							</tbody>
+					</table>
+					<p>© Not actually copyrighted 2021</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="proj4Script.js"></script>
+		<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
