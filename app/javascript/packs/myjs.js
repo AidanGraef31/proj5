@@ -3,15 +3,19 @@ $(function(){
     // $('#testDiv').html("hi mom");
     // $('#example').DataTable();
     function load() {
-        $.getJSON("getDatabase.php", function(data) {
-            var catalogJSON = data.catalog;
+        $.getJSON("http://localhost:3000/plans/1.json", function(data) {
             var planJSON = data.plan;
-            var plan = makePlan(planJSON, catalogJSON);
-            createUR(plan);
-            createAccordion(catalogJSON);
-            createCatalog(catalogJSON);
-            selectPlans();
+            $('#testDiv').html(planJSON);
         });
+        // $.getJSON("getDatabase.php", function(data) {
+        //     var catalogJSON = data.catalog;
+        //     var planJSON = data.plan;
+        //     var plan = makePlan(planJSON, catalogJSON);
+        //     createUR(plan);
+        //     createAccordion(catalogJSON);
+        //     createCatalog(catalogJSON);
+        //     selectPlans();
+        // });
         
     }
     function createUR(plan) {
