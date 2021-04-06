@@ -5,6 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+PlanCourse.delete_all
+CatalogCourse.delete_all
+Course.delete_all
+Plan.delete_all
+Catalog.delete_all
+User.delete_all
+
+
+
+
 
 # make users
 user1 = User.new
@@ -44,3 +54,14 @@ plancourse1.course = course1
 plancourse1.term = "Fall"
 plancourse1.year = 2018
 plancourse1.save!
+
+#make catalogs
+catalog1 = Catalog.new
+catalog1.year = 2018
+catalog1.save!
+
+#make catalog-courses
+catalogcourse1 = CatalogCourse.new
+catalogcourse1.catalog = catalog1
+catalogcourse1.course = course1
+catalogcourse1.save!

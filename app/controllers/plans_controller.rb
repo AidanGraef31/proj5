@@ -5,6 +5,7 @@ class PlansController < ApplicationController
   # GET /plans or /plans.json
   def index
     @plans = Plan.where(user_id: current_user.id)
+    @catalog = Catalog.first
   end
 
   # GET /plans/1 or /plans/1.json
@@ -25,7 +26,7 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     @plan.user_id = current_user.id
-
+    @catalog = Catalog.new
     respond_to do |format|
       if @plan.save
         format.html { redirect_to @plan, notice: "Plan was successfully created." }
