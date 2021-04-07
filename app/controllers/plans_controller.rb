@@ -6,6 +6,13 @@ class PlansController < ApplicationController
   def index
     @plans = Plan.where(user_id: current_user.id)
     @catalog = Catalog.first
+
+    # added according to Dr. G's email about the redirect
+    @plan = @plans[0]
+    respond_to do |format|
+      format.html { redirect_to @plan}
+      format.json {render :show, status: :created, location: @plan }
+    end
   end
 
   # GET /plans/1 or /plans/1.json
