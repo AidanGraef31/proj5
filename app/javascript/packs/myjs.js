@@ -87,10 +87,26 @@ $(function(){
         return total;
     }
     function createAccordion(catalogJSON) {
-        $.getJSON("getRequirements.php", function(data) {
-            var core = data.categories.Core.courses;
-            var electives = data.categories.Electives.courses;
-            var cognates = data.categories.Cognates.courses;
+        //$.getJSON("getRequirements.php", function(data) {
+            
+        
+            var core = []; //data.categories.Core.courses;
+            var electives = []; //data.categories.Electives.courses;
+            var cognates = []; //data.categories.Cognates.courses;
+
+            for(var i=0; i<catalogJSON.courses.length; i++){
+                if(catalogJSON.courses[i].category == "core") {
+                    core += catalogJSON.courses[i].id;
+                }
+                if(catalogJSON.courses[i].category == "electives") {
+                    electives += catalogJSON.courses[i].id;
+                }
+                if(catalogJSON.courses[i].category == "cognates") {
+                    cognates += catalogJSON.courses[i].id;
+                }
+            }
+
+
             var html = "";
             for (var i = 0; i < core.length; ++i) {
                 var catalogCourse = catalogJSON.courses[core[i]];
@@ -137,7 +153,7 @@ $(function(){
                 }
             }
             $("#cognatesTab").html(html);
-        });
+        //});
     }
     
     function createCatalog(catalogJson) {
