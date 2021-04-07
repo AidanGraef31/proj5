@@ -76,6 +76,55 @@ plancourse1.term = "Fall"
 plancourse1.year = 2018
 plancourse1.save!
 
+plancourse2 = PlanCourse.new
+plancourse2.plan = plan1
+plancourse2.course = course2
+plancourse2.term = "Spring"
+plancourse2.year = 2018
+plancourse2.save!
+
+plancourse3 = PlanCourse.new
+plancourse3.plan = plan1
+plancourse3.course = course3
+plancourse3.term = "Fall"
+plancourse3.year = 2019
+plancourse3.save!
+
+plancourse4 = PlanCourse.new
+plancourse4.plan = plan1
+plancourse4.course = course4
+plancourse4.term = "Spring"
+plancourse4.year = 2019
+plancours4.save!
+
+plancourse5 = PlanCourse.new
+plancourse5.plan = plan1
+plancourse5.course = course5
+plancourse5.term = "Fall"
+plancourse5.year = 2020
+plancourse5.save!
+
+plancourse6 = PlanCourse.new
+plancourse6.plan = plan1
+plancourse6.course = course6
+plancourse6.term = "Spring"
+plancourse6.year = 2020
+plancourse6.save!
+
+plancourse7 = PlanCourse.new
+plancourse7.plan = plan1
+plancourse7.course = course7
+plancourse7.term = "Fall"
+plancourse7.year = 2021
+plancourse7.save!
+
+plancourse8 = PlanCourse.new
+plancourse8.plan = plan1
+plancourse8.course = course8
+plancourse8.term = "Spring"
+plancourse8.year = 2021
+plancourse8.save!
+
 #make catalogs
 catalog1 = Catalog.new
 catalog1.year = 2018
@@ -86,3 +135,38 @@ catalogcourse1 = CatalogCourse.new
 catalogcourse1.catalog = catalog1
 catalogcourse1.course = course1
 catalogcourse1.save!
+
+catalogcourse2 = CatalogCourse.new
+catalogcourse2.catalog = catalog1
+catalogcourse2.course = course2
+catalogcourse2.save!
+
+catalogcourse3 = CatalogCourse.new
+catalogcourse3.catalog = catalog1
+catalogcourse3.course = course3
+catalogcourse3.save!
+
+catalogcourse4 = CatalogCourse.new
+catalogcourse4.catalog = catalog1
+catalogcourse4.course = course4
+catalogcourse4.save!
+
+catalogcourse5 = CatalogCourse.new
+catalogcourse5.catalog = catalog1
+catalogcourse5.course = course5
+catalogcourse5.save!
+
+catalogcourse6 = CatalogCourse.new
+catalogcourse6.catalog = catalog1
+catalogcourse6.course = course6
+catalogcourse6.save!
+
+catalogcourse7 = CatalogCourse.new
+catalogcourse7.catalog = catalog1
+catalogcourse7.course = course7
+catalogcourse7.save!
+
+catalogcourse8 = CatalogCourse.new
+catalogcourse8.catalog = catalog1
+catalogcourse8.course = course8
+catalogcourse8.save!
