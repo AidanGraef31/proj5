@@ -36,28 +36,50 @@ user2.save!
 course1 = Course.new
 course1.name = "Intro to Programming"
 course1.courseId = "CS-1210"
-course1.description = ""
+course1.description = "Feeble effort to teach programming"
+course1.credits = 3
 course1.save!
 course2 = Course.new
-course2.name = "CS-1220"
+course2.name = "OOD"
+course2.courseId = "CS-1220"
+course2.description = "OOD?"
+course2.credits = 3
 course2.save!
 course3 = Course.new
-course3.name = "BSKT-1000"
+course3.name = "Intro to Basket-weaving"
+course3.courseId = "BSKT-1000"
+course3.description = "no description necessary"
+course3.credits = 3
 course3.save!
 course4 = Course.new
-course4.name = "MATH-1750"
+course4.name = "Calculus V"
+course4.courseId = "MATH-1750"
+course4.description = "This got old a while ago"
+course4.credits = 5
 course4.save!
 course5 = Course.new
-course5.name = "CS-2210"
+course5.name = "Java"
+course5.courseId = "CS-2210"
+course5.description = "A type of coffee"
+course5.credits = 3
 course5.save!
 course6 = Course.new
-course6.name = "TRTL-2000"
+course6.name = "Turtle Salvation Seminar"
+course6.courseId = "TRTL-2000"
+course6.description = "Take this if you are a good person"
+course6.credits = 2
 course6.save!
 course7 = Course.new
-course7.name = "VMP-2000"
+course7.name = "Intro to Vampire History"
+course7.courseId = "VMP-2000"
+course7.description = "Way easier than ADVANCED Vampire History"
+course7.credits = 1
 course7.save!
 course8 = Course.new
-course8.name = "YEET-1000"
+course8.name = "Yeet"
+course8.courseId = "YEET-1000"
+course8.description = "Yeet yeet YEET"
+course8.credits = 2
 course8.save!
 
 # make plans
