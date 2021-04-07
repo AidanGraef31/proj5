@@ -243,6 +243,7 @@ $(function(){
     
     }
     
+    
     function selectPlans() {
         $.getJSON("getPlans.php", function(data) {
             var list = "";

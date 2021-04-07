@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
   before_action :set_plan, only: %i[ show edit update destroy ]
+  before_action :set_catalog, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
   # GET /plans or /plans.json
@@ -71,6 +72,10 @@ class PlansController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_plan
       @plan = Plan.find(params[:id])
+    end
+
+    def set_catalog
+      @catalog = Catalog.first
     end
 
     # Only allow a list of trusted parameters through.

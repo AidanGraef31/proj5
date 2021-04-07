@@ -17,8 +17,6 @@
   <strong>Courses:</strong><br/>
   <% @catalog.catalog_courses.each do |cc| %>
     <%= cc.course.name %>
-    <%= cc.term %>
-    <%= cc.year %><br/>
   <% end %>
 </p>
 

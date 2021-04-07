@@ -11,5 +11,5 @@ json.plan do
 end
 
 json.catalog do
-    json.catyear @catalog.year
+    json.year @catalog.year
 end
