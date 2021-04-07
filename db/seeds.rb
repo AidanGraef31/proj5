@@ -34,7 +34,8 @@ user2.save!
 
 # make courses
 course1 = Course.new
-course1.name = "CS-1210"
+course1.name = "Intro to Programming"
+course1.courseId = "CS-1210"
 course1.save!
 course2 = Course.new
 course2.name = "CS-1220"

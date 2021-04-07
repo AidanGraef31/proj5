@@ -28,7 +28,13 @@ ActiveRecord::Schema.define(version: 2021_04_06_184009) do
   end
 
   create_table "courses", force: :cascade do |t|
+    t.string "courseId"
+    t.integer "year"
+    t.string "term"
     t.string "name"
+    t.string "description"
+    t.integer "credits"
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -45,7 +51,11 @@ ActiveRecord::Schema.define(version: 2021_04_06_184009) do
   end
 
   create_table "plans", force: :cascade do |t|
+    t.integer "student"
     t.string "name"
+    t.integer "major"
+    t.integer "currYear"
+    t.string "currTerm"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
