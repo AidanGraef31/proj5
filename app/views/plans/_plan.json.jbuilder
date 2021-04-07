@@ -23,5 +23,6 @@ json.catalog do
            json.name cc.course.name
            json.description cc.course.description
            json.credits cc.course.credits
+           json.category cc.course.category
     end
 end
