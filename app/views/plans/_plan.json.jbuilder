@@ -26,3 +26,9 @@ json.catalog do
            json.category cc.course.category
     end
 end
+
+json.categories do
+    json.core @catalog.catalog_courses do |cc|
+       json.array!(@courses) 
+    end
+end
