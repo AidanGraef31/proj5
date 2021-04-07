@@ -12,4 +12,7 @@ end
 
 json.catalog do
     json.year @catalog.year
+    json.courses @catalog.catalog_courses do |cc|
+        json.id cc.course.name
+    end
 end

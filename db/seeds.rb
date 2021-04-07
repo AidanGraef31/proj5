@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 PlanCourse.delete_all
 CatalogCourse.delete_all
+Catalog.delete_all
 Course.delete_all
 Plan.delete_all
-Catalog.delete_all
+
 User.delete_all
 
 
@@ -95,7 +96,7 @@ plancourse4.plan = plan1
 plancourse4.course = course4
 plancourse4.term = "Spring"
 plancourse4.year = 2019
-plancours4.save!
+plancourse4.save!
 
 plancourse5 = PlanCourse.new
 plancourse5.plan = plan1

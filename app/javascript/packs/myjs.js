@@ -10,6 +10,12 @@ $(function(){
     function load() {
         $.getJSON("http://localhost:3000/plans/1.json", function(data) {
             var planJSON = data.plan;
+            var catalogJSON = data.catalog;
+            var plan = makePlan(planJSON, catalogJSON);
+            createUR(plan);
+            createAccordion(catalogJSON);
+            createCatalog(catalogJSON);
+            selectPlans();
             $('#testDiv').html(planJSON.id);
         });
         // $.getJSON("getDatabase.php", function(data) {
