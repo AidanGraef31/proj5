@@ -39,7 +39,7 @@ $(function(){
         for (var i = 0; i < planCourseIds.length; ++i) {
             var planJsonCourse = planJson.courses[planCourseIds[i]];
             var courseJSONCourse = courseJSON.courses[planCourseIds[i]];
-            currPlan.courses.push(new Course(planJsonCourse.courseId, courseJSONCourse.name, planJsonCourse.term, planJsonCourse.year, courseJSONCourse.credits));
+            currPlan.courses.push(new Course(planJsonCourse.id, courseJSONCourse.name, planJsonCourse.term, planJsonCourse.year, courseJSONCourse.credits));
         }
         return currPlan;
     }
