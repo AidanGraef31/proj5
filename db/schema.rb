@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_04_06_184009) do
     t.integer "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
     t.index ["catalog_id"], name: "index_catalog_courses_on_catalog_id"
     t.index ["course_id"], name: "index_catalog_courses_on_course_id"
   end
@@ -34,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_04_06_184009) do
     t.string "name"
     t.string "description"
     t.integer "credits"
-    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

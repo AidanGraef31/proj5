@@ -159,39 +159,47 @@ catalog1.save!
 catalogcourse1 = CatalogCourse.new
 catalogcourse1.catalog = catalog1
 catalogcourse1.course = course1
+catalogcourse1.category = "core"
 catalogcourse1.save!
 
 catalogcourse2 = CatalogCourse.new
 catalogcourse2.catalog = catalog1
 catalogcourse2.course = course2
+catalogcourse2.category = "core"
 catalogcourse2.save!
 
 catalogcourse3 = CatalogCourse.new
 catalogcourse3.catalog = catalog1
 catalogcourse3.course = course3
+catalogcourse3.category = "electives"
 catalogcourse3.save!
 
 catalogcourse4 = CatalogCourse.new
 catalogcourse4.catalog = catalog1
 catalogcourse4.course = course4
+catalogcourse5.category = "cognates"
 catalogcourse4.save!
 
 catalogcourse5 = CatalogCourse.new
 catalogcourse5.catalog = catalog1
 catalogcourse5.course = course5
+catalogcourse5.category = "core"
 catalogcourse5.save!
 
 catalogcourse6 = CatalogCourse.new
 catalogcourse6.catalog = catalog1
 catalogcourse6.course = course6
+catalogcourse6.category = "electives"
 catalogcourse6.save!
 
 catalogcourse7 = CatalogCourse.new
 catalogcourse7.catalog = catalog1
 catalogcourse7.course = course7
+catalogcourse7.category = "electives"
 catalogcourse7.save!
 
 catalogcourse8 = CatalogCourse.new
 catalogcourse8.catalog = catalog1
 catalogcourse8.course = course8
+catalogcourse8.category = "cognates"
 catalogcourse8.save!
