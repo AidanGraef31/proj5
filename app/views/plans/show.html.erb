@@ -24,7 +24,20 @@
 
 <%= link_to 'Edit', edit_plan_path(@plan) %> |
 <%= link_to 'Back', plans_path %>
-
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+function drag(ev){
+      ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev){
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+	//   ev.target.html(document.getElementById(data));
+}
+</script>
 
 		<div id="testDiv"></div>
 		<h1 id="header">

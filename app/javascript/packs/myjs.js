@@ -1,3 +1,5 @@
+
+
 $(function(){
     // $('#calendarField').datepicker({ dateFormat: 'yy-mm-dd' });
     // $.getJSON("http://localhost:3000/plans/1.json", function(data) {
@@ -130,10 +132,12 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
                 }
                 else{
                     html += "<div class='innerAccordion'>";
-                    html += "<li>";
+                    html += "<span draggable=true ondragstart='drag(event)' id=";
+                    html += `${core[i]} `;
+                    html += ">";
                     html += `${core[i]} `;
                     html += catalogJSON.courses[index].name
-                    html += "</li>";
+                    html += "</span>";
                     html += "</div>";
                 }
             }
@@ -147,10 +151,12 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
                 }
                 else {
                     html += "<div class='innerAccordion'>";
-                    html += "<li>";
+                    html += "<span draggable=true ondragstart='drag(event)' id=";
+                    html += `${electives[i]} `;
+                    html += ">";
                     html += `${electives[i]} `;
                     html += catalogJSON.courses[index].name
-                    html += "</li>";
+                    html += "</span>";
                     html += "</div>";
                 }
             }
@@ -164,10 +170,12 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
                 }
                 else {
                 html += "<div class='innerAccordion'>";
-                html += "<li>";
+                html += "<span draggable=true ondragstart='drag(event)' id=";
+                html += `${cognates[i]} `;
+                html += ">";
                 html += `${cognates[i]} `;
                 html += catalogJSON.courses[index].name
-                html += "</li>";
+                html += "</span>";
                 html += "</div>";
                 }
             }
@@ -237,10 +245,10 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
     function buildSemesterCourses(plan, semester, year) {
         var html = "";
         if (year.year < plan.currYear) {
-            html += "<div class='sem' ondrop='drop(event)' ondragover='allowDrop(event)'>";
+            html += '<div class="sem" ondrop="drop(event)" ondragover="allowDrop(event)">';
         }
         else {
-            html += "<div class='sem' ondrop='drop(event)' ondragover='allowDrop(event)'>";
+            html += '<div class="sem" ondrop="drop(event)" ondragover="allowDrop(event)">';
         }
         var hours = semester.calcHours();
         if(semester.term == "Fall"){
@@ -251,7 +259,7 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
         html += "<div class='semesterClasses'>";
         for (var i = 0; i < semester.course.length; i++) {
             var course = semester.course[i];
-            html += `<span class='class' draggable=true ondragstart="drag(event)">${course.courseId} ${course.name} <br></span>`;
+            html += `<span class='class' id=${course.courseId} draggable=true ondragstart="drag(event)">${course.courseId} ${course.name} <br></span>`;
         }
         html += "</div></div>";
     
@@ -362,4 +370,11 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
             }
         }
     }
+
+
+  
+
+
+
+
 });
