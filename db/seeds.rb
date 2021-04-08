@@ -177,7 +177,7 @@ catalogcourse3.save!
 catalogcourse4 = CatalogCourse.new
 catalogcourse4.catalog = catalog1
 catalogcourse4.course = course4
-catalogcourse5.category = "cognates"
+catalogcourse4.category = "cognates"
 catalogcourse4.save!
 
 catalogcourse5 = CatalogCourse.new

@@ -23,12 +23,18 @@ json.catalog do
            json.name cc.course.name
            json.description cc.course.description
            json.credits cc.course.credits
-           json.category cc.course.category
+           json.category cc.category
     end
 end
 
-json.categories do
-    json.core @catalog.catalog_courses do |cc|
-       json.array!(@courses) 
-    end
-end
+
+
+
+# json.categories do
+#     json.core @catalog.catalog_courses do |cc|
+#     @list = cc.course.courseId if cc.category == "core"      
+#        json.courses do
+#         json.array!  @list    
+#        end
+#     end
+# end

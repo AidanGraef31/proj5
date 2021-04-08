@@ -5,6 +5,19 @@ $(function(){
     //     $('#testDiv').html(planJSON.id);
     // });
     load();
+$(function() {
+    $("#accordion").accordion({
+    heightStyle: "content"
+    });
+  });
+  $(document).on("click", ".accordion-toggle", function () {
+if ($(this).attr('class').indexOf('open') == -1)
+$(this).toggleClass("open").next().slideToggle('fast');
+//Hide the other panels
+$(".accordion-toggle").not($(this)).removeClass("open");
+$(".accordion-content").not($(this).next()).slideUp('fast');
+});
+
     // $('#testDiv').html("hi mom");
     // $('#example').DataTable();
     function load() {
@@ -96,20 +109,22 @@ $(function(){
 
             for(var i=0; i<catalogJSON.courses.length; i++){
                 if(catalogJSON.courses[i].category == "core") {
-                    core += catalogJSON.courses[i].id;
+                    core.push(catalogJSON.courses[i].id);
                 }
                 if(catalogJSON.courses[i].category == "electives") {
-                    electives += catalogJSON.courses[i].id;
+                    electives.push(catalogJSON.courses[i].id);
                 }
                 if(catalogJSON.courses[i].category == "cognates") {
-                    cognates += catalogJSON.courses[i].id;
+                    cognates.push(catalogJSON.courses[i].id);
                 }
             }
 
 
             var html = "";
             for (var i = 0; i < core.length; ++i) {
-                var catalogCourse = catalogJSON.courses[core[i]];
+                // var catalogCourse = catalogJSON.courses[core[i]];
+                var catalogCourse = core[i];
+                var index = catalogJSON.courses.findIndex(x => x.id === core[i]);
                 if(catalogCourse == undefined){
     
                 }
@@ -117,7 +132,7 @@ $(function(){
                     html += "<div class='innerAccordion'>";
                     html += "<li>";
                     html += `${core[i]} `;
-                    html += catalogCourse.name
+                    html += catalogJSON.courses[index].name
                     html += "</li>";
                     html += "</div>";
                 }
@@ -125,14 +140,16 @@ $(function(){
             $("#coreTab").html(html);
             html = "";
             for (i = 0; i < electives.length; ++i) {
-                var catalogCourse = catalogJSON.courses[electives[i]];
+                // var catalogCourse = catalogJSON.courses[electives[i]];
+                var catalogCourse = electives[i];
+                var index = catalogJSON.courses.findIndex(x => x.id === electives[i]);
                 if(catalogCourse == undefined){
                 }
                 else {
                     html += "<div class='innerAccordion'>";
                     html += "<li>";
                     html += `${electives[i]} `;
-                    html += catalogCourse.name
+                    html += catalogJSON.courses[index].name
                     html += "</li>";
                     html += "</div>";
                 }
@@ -140,14 +157,16 @@ $(function(){
             $("#electivesTab").html(html);
             html = "";
             for (i = 0; i < cognates.length; ++i) {
-                var catalogCourse = catalogJSON.courses[cognates[i]];
+                // var catalogCourse = catalogJSON.courses[cognates[i]];
+                var catalogCourse = cognates[i];
+                var index = catalogJSON.courses.findIndex(x => x.id === cognates[i]);
                 if(catalogCourse == undefined){
                 }
                 else {
                 html += "<div class='innerAccordion'>";
                 html += "<li>";
                 html += `${cognates[i]} `;
-                html += catalogCourse.name
+                html += catalogJSON.courses[index].name
                 html += "</li>";
                 html += "</div>";
                 }
