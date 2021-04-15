@@ -1,11 +1,6 @@
 
 
 $(function(){
-    // $('#calendarField').datepicker({ dateFormat: 'yy-mm-dd' });
-    // $.getJSON("http://localhost:3000/plans/1.json", function(data) {
-    //     var planJSON = data.plan;
-    //     $('#testDiv').html(planJSON.id);
-    // });
     load();
 $(function() {
     $("#accordion").accordion({
@@ -19,9 +14,6 @@ $(this).toggleClass("open").next().slideToggle('fast');
 $(".accordion-toggle").not($(this)).removeClass("open");
 $(".accordion-content").not($(this).next()).slideUp('fast');
 });
-
-    // $('#testDiv').html("hi mom");
-    // $('#example').DataTable();
     function load() {
         $.getJSON("http://localhost:3000/plans/1.json", function(data) {
             var planJSON = data.plan;
@@ -31,18 +23,7 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
             createAccordion(catalogJSON);
             createCatalog(catalogJSON);
             selectPlans();
-            $('#testDiv').html(planJSON.id);
-        });
-        // $.getJSON("getDatabase.php", function(data) {
-        //     var catalogJSON = data.catalog;
-        //     var planJSON = data.plan;
-        //     var plan = makePlan(planJSON, catalogJSON);
-        //     createUR(plan);
-        //     createAccordion(catalogJSON);
-        //     createCatalog(catalogJSON);
-        //     selectPlans();
-        // });
-        
+        });        
     }
     function createUR(plan) {
         convertPlan(plan);
@@ -132,7 +113,7 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
                 }
                 else{
                     html += "<div class='innerAccordion'>";
-                    html += "<span draggable=true ondragstart='drag(event)' id=";
+                    html += "<span draggable=true ondragstart='drag(event)' id=acc";
                     html += `${core[i]} `;
                     html += ">";
                     html += `${core[i]} `;
@@ -151,7 +132,7 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
                 }
                 else {
                     html += "<div class='innerAccordion'>";
-                    html += "<span draggable=true ondragstart='drag(event)' id=";
+                    html += "<span draggable=true ondragstart='drag(event)' id=acc";
                     html += `${electives[i]} `;
                     html += ">";
                     html += `${electives[i]} `;
@@ -170,7 +151,7 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
                 }
                 else {
                 html += "<div class='innerAccordion'>";
-                html += "<span draggable=true ondragstart='drag(event)' id=";
+                html += "<span draggable=true ondragstart='drag(event)' id=acc";
                 html += `${cognates[i]} `;
                 html += ">";
                 html += `${cognates[i]} `;
@@ -192,7 +173,7 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
                 var course = catalogCourses[courseIds[i]];
                 html += "<tr role='row' class='odd'>";
                 html += `<td>${course.id}</td>`;
-                html += `<td>${course.name}</td>`;
+                html += `<td id=CF${course.id} draggable=true ondragstart="drag(event)">${course.name}  </td>`;
                 html += `<td>${course.credits}</td>`;
                 html += `<td>${course.description}</td>`
                 html += "</tr>";
@@ -226,7 +207,7 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
         }else{
             var planStudent = "Jarett";
         }
-        document.getElementById("header").innerHTML = ` <span id= 'Acro'>CAPE: Welcome, ${planStudent}</span> <span id= 'Title'>Cedarville Academic Planning Environment</span>  <span id = 'TotalHours'>Total Hours: ${totalHours} <br> Major: ${planMajor} <br> Catalog: ${plan.years[0].year -1 }</span> `
+        document.getElementById("header").innerHTML = `<span id= 'Title'>Cedarville Academic Planning Environment</span>  <span id = 'TotalHours'>Total Hours: ${totalHours} <br> Major: ${planMajor} <br> Catalog: ${plan.years[0].year -1 }</span> `
     }
     
     function createHtml(plan) {
@@ -294,26 +275,26 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
     
     
     function selectPlans() {
-        $.getJSON("getPlans.php", function(data) {
+        $.getJSON("http://localhost:3000/plans.json", function(data) {
             var list = "";
-            for(var i = 0; i<data.plans.length; i++){
-                list += "<option value='" + data.plans[i].name + "'>" + data.plans[i].name + "</option>";
-            }
+            // for(var i = 0; i<data.length; i++){
+                list += "<option value='" + data.plan.name + "'>" + data.plan.name + "</option>";
+            // }
             document.getElementById("plans").innerHTML = list;
-            var planName = document.getElementById("plans").value;
-            var realPlan;
-            for(var i = 0; i<data.plans.length; i++){
-                if(planName == data.plans[i].name){
-                    realPlan = data.plans[i];
-                }
-            }
-            var plan = makePlan(realPlan, data.catalog);
-            createUR(plan);
+            // var planName = document.getElementById("plans").value;
+            // var realPlan;
+            // for(var i = 0; i<data.plans.length; i++){
+            //     if(planName == data.plans[i].name){
+            //         realPlan = data.plans[i];
+            //     }
+            // }
+            // var plan = makePlan(realPlan, data.catalog);
+            // createUR(plan);
         });
     }
     
     function ChoosePlans() {
-        $.getJSON("getPlans.php", function(data) {
+        $.getJSON("http://localhost:3000/plans.json", function(data) {
             var planName = document.getElementById("plans").value;
             var realPlan;
             for(var i = 0; i<data.plans.length; i++){
@@ -370,11 +351,4 @@ $(".accordion-content").not($(this).next()).slideUp('fast');
             }
         }
     }
-
-
-  
-
-
-
-
 });

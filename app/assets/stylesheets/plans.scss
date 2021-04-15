@@ -1,16 +1,22 @@
 // Place all the styles related to the Plans controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-header { background-color: #b0c4df;}
+// header { background-color: #b0c4df;}
 html body { background: #1e1f26; }
 h1{
-    background: rgba(0,0,0,.5);
+    // background: rgba(0,0,0,.5);
     font-size: 250%;
     color: whitesmoke;
     text-align: center;
 }
 h2{
     font-size: 250%;
+    color: whitesmoke;
+    text-align: center;
+}
+h3{
+    // background: rgba(0,0,0,.5);
+    font-size: 200%;
     color: whitesmoke;
     text-align: center;
 }
@@ -180,7 +186,7 @@ cursor: pointer;
     width:250px;
     text-align: center;
     background-color: white;
-    font-weight: bold;
+    // font-weight: bold;
     border: 1px solid black;
     margin: 5px;
     padding: 10px;
@@ -226,7 +232,12 @@ cursor: pointer;
 form span {
     margin-bottom: 3%;
 }
-
+.semesterClasses{
+	margin: 10px;
+}
+.semesterYear{
+	font-weight: bold;
+}
 .innerAccordion{
     border: none;
 }
@@ -274,6 +285,9 @@ tr {
     #UL div{
         font-size: 100%;
     }
+	#UL div div{
+        font-size: 50%;
+    }
     form{
         font-size: 75%;
     }
@@ -289,8 +303,11 @@ tr {
         font-size: 80%;
     }
     h1{
-        font-size: 140%;
+        font-size: 0%;
     }
+	h3{
+		font-size:0%;
+	}
 
   }
   

@@ -150,6 +150,13 @@ plancourse8.term = "Spring"
 plancourse8.year = 2021
 plancourse8.save!
 
+plancourse9 = PlanCourse.new
+plancourse9.plan = plan2
+plancourse9.course = course1
+plancourse9.term = "Fall"
+plancourse9.year = 2018
+plancourse9.save!
+
 #make catalogs
 catalog1 = Catalog.new
 catalog1.year = 2018
@@ -203,3 +210,9 @@ catalogcourse8.catalog = catalog1
 catalogcourse8.course = course8
 catalogcourse8.category = "cognates"
 catalogcourse8.save!
+
+catalogcourse9 = CatalogCourse.new
+catalogcourse9.catalog = catalog1
+catalogcourse9.course = course1
+catalogcourse9.category = "core"
+catalogcourse9.save!

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<%
+=begin%>
+ <p>
   <strong>Name:</strong>
   <%= @plan.name %><br/>
   <strong>Courses:</strong><br/>
@@ -18,12 +20,15 @@
   <% @catalog.catalog_courses.each do |cc| %>
     <%= cc.course.name %>
   <% end %>
-</p>
+</p> 
+
 
 
 
 <%= link_to 'Edit', edit_plan_path(@plan) %> |
 <%= link_to 'Back', plans_path %>
+<%
+=end%>
 <script>
 function allowDrop(ev) {
     ev.preventDefault();
@@ -34,8 +39,15 @@ function drag(ev){
 function drop(ev){
       ev.preventDefault();
       var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
-	//   ev.target.html(document.getElementById(data));
+	  if (ev.ctrlKey){
+    	var nodeCopy = document.getElementById(data).cloneNode(true);
+    	nodeCopy.id = "newId"; /* We cannot use the same ID */
+    	ev.target.appendChild(nodeCopy);
+		document.getElementById("newId").style.fontSize = "100%";
+		document.getElementById("newId").style.textAlign = "start";
+  		}
+ 		else
+     	ev.target.appendChild(document.getElementById(data));
 }
 </script>
 
@@ -66,7 +78,7 @@ function drop(ev){
 					<select id="plans" onchange="ChoosePlans()"></select>
 					<div class="navBut" onclick= "location.href='../../cs3220.html';">Back to Projects<br> </div>
 					<div class="navBut" onclick= "location.href='https://csweb.cedarville.edu/index.php';">Back to Judah</a></div>
-					<div class="navBut" onclick= "location.href='logout.php';">Logout</a></div> <br>
+					<div class="navBut"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></a></div> <br>
 				</div>
 			</div>
 			<div id= "Right">
@@ -80,7 +92,7 @@ function drop(ev){
 							<thead>
 								<tr role="row">
 										<th class="sorting" tabindex="0" rowspan="1" colspan="1">Name</th>
-										<th class="sorting" tabindex="0" rowspan="1" colspan="1">Title</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1" >Title</th>
 										<th class="sorting" tabindex="0" rowspan="1" colspan="1" >Credits</th>
 										<th class="sorting" tabindex="0" rowspan="1" colspan="1" >Description</th>
 								</tr>
